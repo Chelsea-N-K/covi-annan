@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>flappy Bird</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Teko:700">
+
+</head>
+
+<body>
+  <center>
+		<img name="slide" width="500" height="120">
+
+	 </center>
+  <canvas id="mycanvas" width="400" height="540" ></canvas>
+
+</body>
+<footer>
+
+	<center><h6>
+		<a href="https://www.mockofun.com">Image design created with MockoFUN</a>
+	</h6></center>
+</footer>
+
+<script src="js/jquery-3.5.1.js"></script>
+<script src="js/scripts.js"></script>
+</html>
+<script>
+	var i = 0; // Start point
+	var images = [];
+	var time = 5000;
+
+	// Image List
+	images[0] = 'imgsl/covid.jpg';
+	images[1] = 'imgsl/covid2.jpg';
+	images[2] = 'imgsl/1.jpg';
+	images[3] = 'imgsl/2.jpg';
+	images[4] = 'imgsl/3.jpg';
+	images[5] = 'imgsl/4.jpg';
+	images[6] = 'imgsl/5.jpg';
+	images[7] = 'imgsl/6.jpg';
+	images[8] = 'imgsl/7.jpg';
+	images[9] = 'imgsl/8.jpg';
+	images[10] = 'imgsl/9.jpg';
+  images[10] = 'imgsl/10.jpg';
+
+	// Change Image
+	function changeImg(){
+		document.slide.src = images[i];
+
+		if(i < images.length - 1){
+			i++;
+		} else {
+			i = 0;
+		}
+
+		setTimeout("changeImg()", time);
+	}
+
+	window.onload = changeImg;
+
+</script>
